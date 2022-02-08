@@ -29,6 +29,7 @@ public class Runner {
                     new InputStreamReader(System.in));
 
             String move = "";
+            System.out.println("Enter your move");
             // Reading data using readLine
             try {
                 move = reader.readLine();
