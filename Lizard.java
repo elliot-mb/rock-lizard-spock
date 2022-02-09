@@ -4,13 +4,13 @@ public class Lizard extends Move{
 
     public String getName(){ return "lizard"; }
 
-    public void attack(Rock r){ System.out.println("Rock crushes lizard"); }
-    public void attack(Paper p){ System.out.println("Paper is eaten by lizard"); }
-    public void attack(Scissors sc){ System.out.println("Scissors injure lizard"); }
-    public void attack(Lizard l){ System.out.println("Lizard matches lizard"); }
-    public void attack(Spock sp){ System.out.println("Spock is poisoned by lizard"); }
+    public int attack(Rock r){ System.out.println("Rock crushes lizard"); return 1; }
+    public int attack(Paper p){ System.out.println("Paper is eaten by lizard"); return 0; }
+    public int attack(Scissors sc){ System.out.println("Scissors injure lizard"); return 1; }
+    public int attack(Lizard l){ System.out.println("Lizard matches lizard"); return -1; }
+    public int attack(Spock sp){ System.out.println("Spock is poisoned by lizard"); return 0; }
 
-    public void attack(Move m){
-        m.attack(this);
+    public int attack(Move m){
+        return m.attack(this);
     }
 }

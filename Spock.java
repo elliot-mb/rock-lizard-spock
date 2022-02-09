@@ -4,13 +4,11 @@ public class Spock extends Move{
 
     public String getName(){ return "spock"; }
 
-    public void attack(Rock r){ System.out.println("Rock is vapourised by Spock"); }
-    public void attack(Paper p){ System.out.println("Paper disproves Spock"); }
-    public void attack(Scissors sc){ System.out.println("Scissors are smashed by Spock"); }
-    public void attack(Lizard l){ System.out.println("Lizard poisons Spock"); }
-    public void attack(Spock sp){ System.out.println("Spock matches Spock"); }
+    public int attack(Rock r){ System.out.println("Rock is vapourised by Spock"); return 0; }
+    public int attack(Paper p){ System.out.println("Paper disproves Spock"); return 1; }
+    public int attack(Scissors sc){ System.out.println("Scissors are smashed by Spock"); return 0; }
+    public int attack(Lizard l){ System.out.println("Lizard poisons Spock"); return 1; }
+    public int attack(Spock sp){ System.out.println("Spock matches Spock"); return -1; }
 
-    public void attack(Move m){
-        m.attack(this);
-    }
+    public int attack(Move m){ return m.attack(this); }
 }

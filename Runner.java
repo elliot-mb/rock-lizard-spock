@@ -21,8 +21,9 @@ public class Runner {
         sc.attack(l);
         sp.attack(sc);
         */
-        for(int i = 0; i < 3; i++){
-
+        Game turn = new Game(3);
+        //for(int i = 0; i < 3; i++){
+        while (!turn.gameEnds()){
             // -- code copied from GeeksForGeeks --
             // Enter data using BufferReader
             BufferedReader reader = new BufferedReader(
@@ -38,12 +39,12 @@ public class Runner {
             }
             // -- end code copied from GeeksForGeeks --
 
-            Turn turn = new Turn(move);
-            if(turn.take()){ //if valid...
+            if(turn.take(move)){ //if valid...
                 turn.play(); ///...play the move
             }
             else{ System.out.println("Illegal move"); }
         }
 
+        if(turn.playerWon()) { System.out.println("You win!"); } else { System.out.println("You lose"); }
     }
 }
