@@ -43,7 +43,7 @@ public class Game {
     }
 
     private void score(int outcome){
-        if(!(outcome == -1 || (scoreGame == rounds - 2 && scorePlayer == rounds - 2))){ //not a tiebreaker
+        if(outcome != -1){ //not a tiebreaker
             scorePlayer += outcome;
             scoreGame += outcome == 1 ? 0 : 1;
             System.out.print("Best of " + rounds + " rounds: the score is ");
