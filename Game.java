@@ -10,14 +10,14 @@ public class Game {
             new Spock()
     };
     private Move move; // the move the player takes on current turn
-    private int scorePlayer; // out of 3+ for the player
+    private int scorePlayer;
     private int scoreGame;
     private int rounds;
 
     Game(int _rounds){
         scorePlayer = 0;
         scoreGame = 0;
-        rounds = _rounds > 3 ? _rounds : 3; //best of rounds (less than 3 doesn't work)
+        rounds = _rounds > 3 ? _rounds : 3; //best of rounds
     }
 
     public boolean gameEnds(){ //has player won
